@@ -1,0 +1,5 @@
+Skyline Real Estate Developers is planning to demolish a number of old, unoccupied buildings and construct a shopping mall in their place. Your task is to find the largest solid area in which the mall can be constructed. There are a number of buildings in a certain two-dimensional landscape. Each building has a height, given by h[i] where i lies in the range [1,n]. If you join K adjacent buildings, they will form a solid rectangle of area:
+K*min(h[i],h[i+1],.....,h[i+k-1])
+Example:
+h=[3,2,3]
+A rectangle of height h=2 and length k=3 can be constructed within the boundaries. The area formed is h.k=2.3=6.
