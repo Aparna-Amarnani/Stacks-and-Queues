@@ -1,4 +1,3 @@
-//Stack based Solution
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -12,6 +11,8 @@ import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 class Result {
+     //two stacks
+     //function to get the top of the stack
      static List<Integer> pos=new ArrayList<>();
      static List<Integer> height=new ArrayList<>();
     public static long peek()
@@ -19,8 +20,6 @@ class Result {
             return height.get(height.size()-1);
         }
     public static long largestRectangle(List<Integer> h) {
-        //two stacks
-        //function to get the top of the stack
         long max=-1;
         int i=0;
         while(i<h.size())
@@ -39,12 +38,12 @@ class Result {
                 {
                     tempp=pos.get(height.size()-1);
                     pos.remove(height.size()-1);
-                    //temph=height.get(height.size()-1);
+                    temph=height.get(height.size()-1);
                     height.remove(height.size()-1);
-                    //max=Math.max(max,(i-tempp)*temph);
+                    max=Math.max(max,(i-tempp)*temph);
                 }
                 //key step
-                pos.add(tempp);//move to the location which has height  just greater than the current building
+                pos.add(tempp);//move to the location which has height just greater than the current building
                 height.add(h.get(i));// add the minimum height
             }
             i++;
